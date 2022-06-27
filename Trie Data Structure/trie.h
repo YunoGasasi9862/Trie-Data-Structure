@@ -95,14 +95,17 @@ bool isEmpty(TrieNode* root)
 {
 	for (int i = 0; i < ALPHABET_SIZE; i++)
 		if (root->children[i])
+		{
 			return false;
+		}
+		
 
 	return true;
 
 }
 
 //Recursive fucntion to delete a key from given Trie
-TrieNode* remove(TrieNode* root, char* key, int depth = 0) //we can initialiaze depth up there too
+TrieNode* remove(TrieNode* root, const char* key, int depth = 0) //we can initialiaze depth up there too
 {
 	//if tree is empty
 	if (!root)
